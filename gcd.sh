@@ -9,8 +9,11 @@ function isNotNumeric() {
 
 tempa=$1
 tempb=$2
-
-if isNotNumeric ${tempa} ; then
+if [ -z "$tempa" ]; then
+	echo "引数1が空です！"
+elif [ -z "$tempb" ]; then
+	echo "引数2が空です！"
+elif isNotNumeric ${tempa} ; then
 	echo "引数1が数字ではありません！"
 elif isNotNumeric ${tempb} ; then
 	echo "引数2が数字ではありません！"
@@ -31,5 +34,5 @@ done
 #echo "end"
 #echo $1
 #echo $2
-echo "greatest common divisor: $tempb "
+echo "greatest common divisor:$tempb"
 fi
